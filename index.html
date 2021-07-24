@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Resume | Vaibhav Kumar</title>
+
+	<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+	<div class="popups-cont">
+	  <div class="popups-cont__overlay"></div>
+	  <div class="popup">
+	    <div class="popup__pieces"></div>
+	    <div class="popup__content">
+	      <h3 class="popup__heading">Select your prefered type</h3>
+
+	      <p class="popup__text">Each type of resume has unique design. Some of them are only CSS based, some of them are some element specific while some are mixture of everything.</p>
+	      <p class="popup__text">Click anywhere to see animation.</p>
+
+	      <br>
+
+	      <div class="popup__close">
+	      	<a href="./simple/">Simple</a>
+	      </div>
+
+	      <div class="popup__close">
+	      	<a href="./notebook_web/index.html">Notebook based</a>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+
+	<button type="button" class="popup-btn">Show Options</button>
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+		// js only creates and insert parts + click events adds classes
+
+		var numOfPieces = 6 * 6;
+
+		var frag = document.createDocumentFragment();
+
+		function insertInnerPieces($el, innerPieces) {
+		  for (var i = 0; i < innerPieces; i++) {
+		    var $inner = document.createElement('div');
+		    $inner.classList.add('popup__piece-inner');
+		    $el.appendChild($inner);
+		  }
+		};
+
+		for (var i = 1; i <= numOfPieces; i++) {
+		  var $piece = document.createElement('div');
+		  $piece.classList.add('popup__piece');
+		  
+		  insertInnerPieces($piece, 3);
+		  frag.appendChild($piece);
+		}
+
+		document.querySelector('.popup__pieces').appendChild(frag);
+
+		var $popupsCont = document.querySelector('.popups-cont');
+		var $popup = document.querySelector('.popup');
+		var popupAT = 900;
+
+		document.querySelector('.popup-btn').addEventListener('click', function() {
+		  $popupsCont.classList.add('s--popup-active');
+		  $popup.classList.add('s--active');
+		});
+
+		function closeHandler() {
+		  $popupsCont.classList.remove('s--popup-active');
+		  $popup.classList.remove('s--active');
+		  $popup.classList.add('s--closed');
+		  
+		  setTimeout(function() {
+		    $popup.classList.remove('s--closed');
+		  }, popupAT);
+		}
+
+		document.querySelector('.popup__close').addEventListener('click', closeHandler);
+
+		document.querySelector('.popups-cont__overlay').addEventListener('click', closeHandler);
+
+	</script>
+
+</body>
+</html>
