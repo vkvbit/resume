@@ -1176,3 +1176,24 @@ a:active {
   text-decoration: underline;
 }
 
+button.heading {
+  margin-bottom: 20px;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: solid black;
+  border-width: 2px;
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+div.heading {
+  top: 10%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
