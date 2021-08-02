@@ -33,9 +33,9 @@
 	      <br>
 
 	      <div class="popup__close">
-	      	<a href="./notebook_web/index.html"><b><u>Notebook</u></b></a>
+	      	<a href="./notebook_web/index.html" id="notebook_link" onclick="changeLink();"><b><u>Notebook</u></b> (supported by desktop and laptop ONLY)</a>
 	      </div>
-	      <p class="popup__text" style="font-size:1rem; margin-left:15px;">notebook page theme, only SVG element tag is used</p>
+	      <p class="popup__text" style="font-size:1rem; margin-left:15px;">notebook page theme, does not support mobile browser only SVG element tag is used</p>
 
 	    </div>
 	  </div>
@@ -55,8 +55,9 @@
 
 
 	<script type="text/javascript">
-		
-		// js only creates and insert parts + click events adds classes
+
+		// Animatiom related JS
+		// Note:- JS only creates and insert parts + click events adds classes
 
 		var numOfPieces = 6 * 6;
 
